@@ -1,15 +1,19 @@
-#!bin/bash
+#bin/bash
 
-kubectl apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml)
 
-kubectl get services
+#configuring project
 
-kubectl get pods
+gcloud config set project gcloudstarter-232905
+gcloud config set compute/zone us-central1-b
 
-kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+#Creating the GKE-Cluster with Istio Components installed
 
-kubectl get svc istio-ingressgateway -n istio-system
+gcloud beta container clusters create istio-demo \
+    --addons=Istio --istio-config=auth=MTLS_STRICT \
+    --cluster-version=1.11.6-gke.6 \
+    --machine-type=n1-standard-2 \
+    --num-nodes=4
 
-#export GATEWAY_URL=35.239.7.64:80
+#Verifying Cluster
 
-#curl -I http://${GATEWAY_URL}/productpage
+gcloud container clusters list
