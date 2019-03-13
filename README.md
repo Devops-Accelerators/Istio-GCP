@@ -15,7 +15,7 @@ sh 01-infra-setup.sh
 ```
 
 ### B) Deploying the BookInfo Application on the GKE Cluster
-Run the **02-Deploy-BookInfo.sh** file using the command 
+Run the **02-deploy-bookinfo.sh** file using the command 
 ```
-sh 02-Deploy-BookInfo.sh
+sh 02-deploy-bookinfo.sh
 ```
