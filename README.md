@@ -7,6 +7,17 @@ A brief description on how to achieve the same is provided below.
 
 ## Steps and How To
 
+Clone the repository using the git command
+```
+git clone https://github.com/Devops-Accelerators/istio-gcp.git
+```
+Move to the cloned repository folder using the command
+```
+cd istio-gcp
+```
+
+
+
 ### A) Creating a GKE Cluster with Istio installed. 
 Clone the repository to your machine and move to the folder **bookinfo** using the command 
 ```
